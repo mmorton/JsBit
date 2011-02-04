@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsBit", "src\JsBit\JsBit.csproj", "{96E35022-458D-478C-A270-0A1D8B60BED9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsBit.ConsoleApplication", "src\JsBit.ConsoleApplication\JsBit.ConsoleApplication.csproj", "{6A1077D9-F555-466E-9EA5-16FF8CA32579}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96E35022-458D-478C-A270-0A1D8B60BED9} = {96E35022-458D-478C-A270-0A1D8B60BED9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
