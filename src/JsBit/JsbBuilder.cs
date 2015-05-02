@@ -52,6 +52,7 @@ namespace JsBit
 
         private void CopyProjectResources(JsbProject project, JsbBuildOptions options)
         {
+					if (project.Resources == null) return;
             Console.WriteLine("Copying project resources.");
 
             foreach (var resource in project.Resources)
@@ -105,7 +106,7 @@ namespace JsBit
 
             using (var combineWriter = new StringWriter())
             {
-                if (String.IsNullOrEmpty(project.License))
+                if (!String.IsNullOrEmpty(project.License))
                     WriteLicense(project.License, combineWriter);
 
                 if (package.IncludeDependencies)
@@ -116,7 +117,7 @@ namespace JsBit
 
                         foreach (var dependency in package.Dependencies)
                         {
-                            Console.WriteLine("- - {0}", dependency);
+                            Console.WriteLine("-- {0}", dependency);
 
                             // use the non minified version of the dependency
                             var dependencyMinifiedPath = Path.Combine(options.DeployPath, dependency);
